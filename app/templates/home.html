@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Viewer</title>
+    <link rel="stylesheet" href="{%static "style.css" %}">
+</head>
+<body>
+
+    {% if teams %}
+        <h1>Leadership Teams</h1>
+        <ul>
+            {% for team in teams %}
+                <li><a href="{% url 'team_detail' team %}">{{ team }}</a></li>
+            {% endfor %}
+        </ul>
+    {% elif team %}
+        <h1>{{ team.name }}</h1>
+        <p>{{ team.des }}</p>
+        <h2>Members:</h2>
+        <ul>
+            {% for member in team.members %}
+                <li>{{ member }}</li>
+            {% endfor %}
+        </ul>
+    {% comment %} {% else %}
+        <p>No teams available.</p> {% endcomment %}
+    {% endif %}
+</body>
+</html>

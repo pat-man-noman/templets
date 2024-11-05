@@ -1,0 +1,14 @@
+body {
+    background-color: darkgrey;
+}
+
+* {
+    text-align: center;
+    color: gold;
+    font-family: monospace;
+    align-content:center;
+}
+li{
+    margin-left: 47%;
+    margin-right: 50%;
+}
